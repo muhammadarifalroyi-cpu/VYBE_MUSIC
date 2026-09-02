@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VYBE MUSIC</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="music-page">
+
+    <div class="music-background"></div>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h1>
+                VYBE
+                <span>MUSIC</span>
+            </h1>
+
+            <small>
+                YOUR MUSIC SPACE
+            </small>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                data-section="home"
+            >
+                <span>⌂</span>
+                <span>Home</span>
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="songs"
+            >
+                <span>♫</span>
+                <span>Songs</span>
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="favorites"
+            >
+                <span>♡</span>
+                <span>Favorites</span>
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="playlists"
+            >
+                <span>▣</span>
+                <span>Playlists</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+    <div class="sidebar-line"></div>
+
+    <button
+        id="settingsButton"
+        class="settings-button"
+        type="button"
+    >
+        ⚙ Settings
+    </button>
+
+    <button
+        id="logoutButton"
+        class="logout-button"
+        type="button"
+    >
+        Logout
+    </button>
+
+    <p>
+        VYBE MUSIC © 2026
+    </p>
+
+</div>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="music-main">
+
+        <header class="music-topbar">
+
+            <div>
+
+                <p class="topbar-small">
+                    WELCOME BACK
+                </p>
+
+                <h2 id="pageTitle">
+                    Discover Your Vibe
+                </h2>
+
+            </div>
+
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search song, artist, album..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <section
+            id="homeSection"
+            class="page-section"
+        >
+
+            <section class="music-hero">
+
+                <div class="hero-content">
+
+                    <p class="hero-label">
+                        YOUR PERSONAL MUSIC SPACE
+                    </p>
+
+                    <h1>
+                        Find Your
+                        <span>Perfect Vibe.</span>
+                    </h1>
+
+                    <p>
+                        Jelajahi musik dari berbagai
+                        negara, genre, dan suasana
+                        yang sesuai dengan mood kamu.
+                    </p>
+
+                    <button
+                        class="hero-button"
+                        id="exploreButton"
+                    >
+                        EXPLORE MUSIC
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FILTER -->
+
+            <section class="music-section filter-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p>DISCOVER</p>
+
+                        <h2>
+                            Music Explorer
+                        </h2>
+
+                    </div>
+
+                    <span id="resultCount">
+                        0 songs
+                    </span>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <h3>Genre</h3>
+
+                    <div
+                        class="filter-list"
+                        id="genreFilters"
+                    >
+
+                        <button
+                            class="filter-button active"
+                            data-genre="all"
+                        >
+                            All
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="Acoustic"
+                        >
+                            Acoustic
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="POP"
+                        >
+                            POP
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="R&B"
+                        >
+                            R&B
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="Jazz"
+                        >
+                            Jazz
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="OST"
+                        >
+                            OST
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="Anime"
+                        >
+                            Anime
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="EDM"
+                        >
+                            EDM
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-genre="Rock"
+                        >
+                            Rock
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <h3>Country</h3>
+
+                    <div
+                        class="filter-list"
+                        id="countryFilters"
+                    >
+
+                        <button
+                            class="filter-button active"
+                            data-country="all"
+                        >
+                            All
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-country="Indonesia"
+                        >
+                             Indonesia
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-country="Korea"
+                        >
+                             Korea
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-country="English"
+                        >
+                             English
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-country="China"
+                        >
+                             China
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-country="Jepang"
+                        >
+                             Jepang
+                        </button>
+
+                    </div>
+
+                </div>
+                
+
+            </section>
+
+            
+
+
+            <!-- ALBUM -->
+
+            <section class="music-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p>COLLECTION</p>
+
+                        <h2>
+                            Albums
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="album-grid"
+                    id="albumGrid"
+                ></div>
+
+            </section>
+
+
+            <!-- SONGS -->
+
+            <section
+    class="music-section song-section"
+    id="songsSection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>MUSIC</p>
+
+            <h2>
+                All Songs
+            </h2>
+
+        </div>
+
+        <button
+            id="toggleSongsButton"
+            class="section-toggle-button"
+            type="button"
+        >
+            Hide
+        </button>
+
+    </div>
+
+    <div
+        class="song-list"
+        id="songList"
+    ></div>
+
+</section>
+
+
+            <!-- FAVORITES -->
+
+            <section
+                class="music-section favorite-section"
+                id="favoritesSection"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="topbar-small">
+                            YOUR COLLECTION
+                        </p>
+
+                        <h2>
+                            My Favorites
+                        </h2>
+
+                    </div>
+
+                    <span id="favoriteCount">
+                        0 favorites
+                    </span>
+
+                </div>
+
+                <div
+                    id="favoriteList"
+                    class="song-list"
+                ></div>
+
+            </section>
+
+
+            <!-- PLAYLIST -->
+
+            <section
+                class="music-section playlist-section"
+                id="playlistsSection"
+            >
+            
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="topbar-small">
+                            ORGANIZE YOUR VIBE
+                        </p>
+
+                        <h2>
+                            My Playlists
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="playlist-create-button"
+                        id="createPlaylistButton"
+                    >
+                        + New Playlist
+                    </button>
+
+                    
+
+                </div>
+
+
+                <div class="playlist-feature">
+
+                    <div class="playlist-feature-content">
+
+                        <span class="playlist-badge">
+                            YOUR PLAYLIST
+                        </span>
+
+                        <h2>
+                            Create Your Own World
+                        </h2>
+
+                        <p>
+                            Kumpulkan lagu berdasarkan
+                            mood, genre, perjalanan,
+                            atau cerita yang kamu suka.
+                        </p>
+
+                        <button
+                            class="playlist-primary-button"
+                            id="featurePlaylistButton"
+                        >
+                            CREATE PLAYLIST
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                    <div class="playlist-feature-icon">
+                        ♫
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="playlist-grid"
+                    id="playlistGrid"
+                ></div>
+
+            </section>
+
+        </section>
+
+
+        <!-- SEARCH EMPTY -->
+
+        <section
+            id="emptySearch"
+            class="empty-state"
+            style="display:none;"
+        >
+
+            <h3>
+                Music not found
+            </h3>
+
+            <p>
+                Coba cari judul lagu atau artis
+                yang berbeda.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================================
+         PLAYER
+    ================================================== -->
+
+    <footer class="music-player">
+
+        <div class="player-song">
+
+            <div class="player-cover">
+
+                <span
+                    id="playerCoverPlaceholder"
+                >
+                    ♫
+                </span>
+
+                <img
+                    id="playerCover"
+                    src=""
+                    alt="Cover"
+                    style="display:none;"
+                >
+
+            </div>
+
+            <div>
+
+                <h4 id="playerTitle">
+                    Nothing Playing
+                </h4>
+
+                <p id="playerArtist">
+                    Choose a song
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-controls">
+
+    <button
+        id="shuffleButton"
+        type="button"
+        title="Shuffle: OFF"
+    >
+        🔀
+    </button>
+
+    <button
+        id="prevButton"
+        type="button"
+        title="Previous"
+    >
+        ⏮
+    </button>
+
+    <button
+        id="playButton"
+        class="play-button"
+        type="button"
+        title="Play"
+    >
+        ▶
+    </button>
+
+    <button
+        id="nextButton"
+        type="button"
+        title="Next"
+    >
+        ⏭
+    </button>
+
+    <button
+        id="repeatButton"
+        type="button"
+        title="Repeat: Off"
+    >
+        🔁
+    </button>
+
+</div>
+
+<div class="player-volume">
+
+    <button
+        id="muteButton"
+        type="button"
+        title="Mute"
+    >
+        🔊
+    </button>
+
+    <input
+        type="range"
+        id="volumeBar"
+        min="0"
+        max="100"
+        value="100"
+        step="1"
+    >
+
+</div>
+
+
+        <div class="player-progress">
+
+            <span id="currentTime">
+                0:00
+            </span>
+
+            <input
+                type="range"
+                id="progressBar"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="duration">
+                0:00
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- =====================================================
+     PLAYLIST MODAL
+====================================================== -->
+
+<div
+    class="playlist-modal"
+    id="playlistModal"
+>
+
+    <div class="playlist-modal-card">
+
+        <button
+            class="modal-close"
+            id="closePlaylistModal"
+            type="button"
+        >
+            ×
+        </button>
+
+        <p class="topbar-small">
+            NEW PLAYLIST
+        </p>
+
+        <h2>
+            Create Playlist
+        </h2>
+
+        <p class="modal-description">
+            Buat playlist baru untuk
+            mengatur lagu favoritmu.
+        </p>
+
+        <label>
+            Playlist Name
+        </label>
+
+        <input
+            type="text"
+            id="playlistNameInput"
+            placeholder="Contoh: My Night Vibe"
+            maxlength="40"
+        >
+
+        <label>
+            Description
+        </label>
+
+        <textarea
+            id="playlistDescriptionInput"
+            placeholder="Ceritakan playlist ini..."
+            maxlength="100"
+        ></textarea>
+
+        <button
+            class="playlist-primary-button modal-create"
+            id="savePlaylistButton"
+            type="button"
+        >
+            CREATE PLAYLIST
+        </button>
+
+    </div>
+    
+
+</div>
+
+<!-- SETTINGS -->
+
+<!-- =====================================================
+     SETTINGS MODAL
+====================================================== -->
+
+<div
+    class="settings-modal"
+    id="settingsModal"
+>
+
+    <div class="settings-modal-card">
+
+        <button
+            class="modal-close"
+            id="closeSettingsModal"
+            type="button"
+        >
+            ×
+        </button>
+
+        <p class="topbar-small">
+            VYBE MUSIC
+        </p>
+
+        <h2>
+            Settings
+        </h2>
+
+        <p class="modal-description">
+            Atur pengalaman musik kamu.
+        </p>
+
+
+        <div class="settings-item">
+
+            <div>
+
+                <strong>
+                    Default Volume
+                </strong>
+
+                <p>
+                    Volume awal ketika membuka
+                    VYBE MUSIC.
+                </p>
+
+            </div>
+
+            <span>
+                50%
+            </span>
+
+        </div>
+
+
+        <div class="settings-item">
+
+            <div>
+
+                <strong>
+                    Player Memory
+                </strong>
+
+                <p>
+                    Volume, lagu terakhir, dan
+                    posisi lagu akan disimpan.
+                </p>
+
+            </div>
+
+            <span>
+                ✓
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+<!-- =====================================================
+     ADD SONG TO PLAYLIST MODAL
+====================================================== -->
+
+<div
+    class="playlist-modal add-song-modal"
+    id="addSongModal"
+>
+
+    <div class="playlist-modal-card add-song-modal-card">
+
+        <button
+            class="modal-close"
+            id="closeAddSongModal"
+            type="button"
+            title="Close"
+        >
+            ×
+        </button>
+
+
+        <p class="topbar-small">
+            PLAYLIST MUSIC
+        </p>
+
+
+        <h2 id="addSongModalTitle">
+            Add Songs
+        </h2>
+
+
+        <p class="modal-description">
+            Pilih lagu yang ingin kamu
+            tambahkan ke playlist.
+        </p>
+
+
+        <!-- SEARCH SONG -->
+
+        <div class="add-song-search">
+
+            <span>
+                ⌕
+            </span>
+
+            <input
+                type="text"
+                id="addSongSearch"
+                placeholder="Search song, artist, album..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- SONG LIST -->
+
+        <div
+            class="add-song-list"
+            id="addSongList"
+        ></div>
+
+
+        <!-- CLOSE -->
+
+        <button
+            class="playlist-primary-button add-song-done"
+            id="doneAddSongButton"
+            type="button"
+        >
+            DONE
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     PLAYLIST DETAIL MODAL
+====================================================== -->
+
+<div
+    class="playlist-detail-modal"
+    id="playlistDetailModal"
+>
+
+    <div class="playlist-detail-card">
+
+        <button
+            class="modal-close"
+            id="closePlaylistDetailModal"
+            type="button"
+        >
+            ×
+        </button>
+
+
+        <div class="playlist-detail-header">
+
+            <div
+                class="playlist-detail-cover"
+                id="playlistDetailCover"
+            >
+                ♫
+            </div>
+
+
+            <div>
+
+                <p class="topbar-small">
+                    YOUR PLAYLIST
+                </p>
+
+                <h2 id="playlistDetailTitle">
+                    Playlist
+                </h2>
+
+                <p id="playlistDetailDescription">
+                    Your personal playlist
+                </p>
+
+                <span id="playlistDetailCount">
+                    0 songs
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="playlist-detail-list"
+            id="playlistDetailList"
+        ></div>
+
+    </div>
+
+</div>
+
+<audio
+    id="audioPlayer"
+    preload="metadata"
+></audio>
+
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="songs.js"></script>
+
+<script src="favorite.js"></script>
+
+<script src="playlist.js"></script>
+
+<script src="music.js"></script>
+
+</body>
+</html>

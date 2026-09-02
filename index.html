@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VYBE MUSIC</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         LOGIN PAGE
+    ========================================== -->
+
+    <div class="login-page">
+
+
+        <!-- Background Overlay -->
+
+        <div class="login-overlay"></div>
+
+
+        <!-- Login Container -->
+
+        <div class="login-container">
+
+
+            <!-- Login Card -->
+
+            <div class="login-card">
+
+
+                <!-- =================================
+                     LOGO
+                ================================== -->
+
+                <div class="login-logo">
+
+                    <h1>
+                        VYBE
+                        <span>MUSIC</span>
+                    </h1>
+
+                    <p>
+                        YOUR PERSONAL MUSIC SPACE
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     WELCOME
+                ================================== -->
+
+                <div class="login-welcome">
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <p>
+                        Masuk ke VYBE MUSIC dan temukan
+                        musik yang sesuai dengan vibe kamu.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form id="loginForm">
+
+
+                    <!-- =============================
+                         USERNAME
+                    ============================== -->
+
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Masukkan username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =============================
+                         PASSWORD
+                    ============================== -->
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <div class="password-wrapper">
+
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Masukkan password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password"
+                                title="Show password"
+                            >
+                                👁
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         LOGIN MESSAGE
+                    ================================== -->
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                        aria-live="polite"
+                    ></div>
+
+
+
+                    <!-- =================================
+                         LOGIN BUTTON
+                    ================================== -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <span>
+                            ENTER VYBE
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =================================
+                     FOOTER
+                ================================== -->
+
+                <div class="login-footer">
+
+                    <p>
+                        VYBE MUSIC © 2026
+                    </p>
+
+
+                    <div>
+
+                        <span>
+                            Music
+                        </span>
+
+                        <b>
+                            •
+                        </b>
+
+                        <span>
+                            Emotion
+                        </span>
+
+                        <b>
+                            •
+                        </b>
+
+                        <span>
+                            Vibe
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>
